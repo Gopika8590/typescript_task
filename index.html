@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task_Webpage</title>
+    <style>
+    .container {
+    height: 200px;
+    position: relative;
+    border: 3px;
+    }
+
+    .center {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    }
+</style>
+</head>
+<body>
+    <div class="container">
+        <div class="center">
+            <button id="demo1" onclick="buttonclick()">Click Here!</button>
+        </div>
+    </div>
+    <center><p>Click_Count: <span id="ClickCount">0</span></p></center>
+    <script>
+        function buttonclick() {
+        ClickCount++;
+        document.getElementById('ClickCount').innerText = ClickCount;
+        changeButtonColor();
+        }
+        function changeButtonColor() {
+        var button = document.getElementById('demo1');
+        var colors = ['red', 'yellow', 'blue'];
+        currentColorIndex = (currentColorIndex + 1) % colors.length;
+        button.style.backgroundColor = colors[currentColorIndex];
+        }
+        var ClickCount = 0;
+        var currentColorIndex = 0;
+    </script>
+</body>
+</html>
